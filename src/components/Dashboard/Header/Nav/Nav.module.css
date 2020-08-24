@@ -1,0 +1,43 @@
+.Nav{
+    /* background-color: rgb(45, 186, 190); */
+    display: flex;
+    justify-content: space-between;
+    position: fixed;
+    top: 7vh;
+    width: 75%;
+    font-size: 20px;
+    border-top-left-radius: 30px;
+    border-top-right-radius: 30px;
+}
+
+.Nav p{
+    color: red;
+    font-weight: 700;
+    margin: 8px 0;
+    margin-left: 60px;
+}
+
+.Nav ul{
+    list-style: none;
+    display: flex;
+    margin: 8px 0;
+    margin-right: 60px; 
+}
+.Nav ul li:not(:last-child){
+    margin-right: 20px;
+}
+.Nav ul li a{
+    text-decoration: none;
+    color: white;
+}
+.Nav button{
+    border:none;
+    outline: none;
+    background-color: transparent;
+    color:rgb(119, 114, 114);
+    font-weight: 700;
+}
+.Nav button:hover{
+    color:rgb(138, 135, 135);
+    cursor: pointer;
+}

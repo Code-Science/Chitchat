@@ -1,0 +1,53 @@
+.MessagesBox{
+    width:65%;
+    height: 100%;
+    background-color: rgba(236, 233, 233, 0.911);
+    /* margin: 50px auto; */
+    overflow-y: auto;
+    overflow-x: hidden;
+    border-radius: 3px;
+}
+
+.MessagesBox ul{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    padding: 10px 20px;
+}
+
+.MessagesBox ul li{
+    /* border: 1px solid black; */
+    text-align: left;
+    height: 60px;
+    cursor: pointer;
+}
+.MessagesBox ul li a{
+    text-decoration: none;
+    color: rgb(5, 5, 5);
+}
+.MessagesBox ul li span{
+    /* display: inline-block; */
+    width: 50px;
+    height: 50px;
+    background-size: cover;
+    background-position: center;
+    border-radius: 50%;
+    float:left;
+    transform: translateY(10%);
+}
+.MessagesBox ul li b{
+    margin-left: 20px;
+    display: inline-block;
+    padding-top: 10px;
+}
+.MessagesBox ul li p{
+    margin:0;
+    transform: translateX(3%);
+    font-size: 13px;
+
+}
+.MessagesBox hr{
+    margin: 2px auto;
+    color: rgb(76, 71, 71);
+    width:80%;
+}

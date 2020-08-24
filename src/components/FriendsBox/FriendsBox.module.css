@@ -1,0 +1,73 @@
+.FriendsBox{
+    width:35%;
+    height: 100%;
+    background-color: rgb(90, 83, 83);
+    /* margin: 50px auto; */
+    /* z-index: 20; */
+    overflow: auto;
+    border-radius: 3px;
+    border-top-left-radius: 0px;
+    border-bottom-left-radius: 0px;
+}
+.FriendsBox ul{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+.FriendsBox li aside button{
+     border: none;
+     outline: none;
+     background-color: transparent;
+     color: rgb(164, 164, 250);
+     font-weight: 700;
+     cursor: pointer;
+}
+.FriendsBox li aside button i{
+    font-size: 18px;
+}
+.FriendsBox li aside button:last-child i{
+    font-size: 16px;
+}
+.FriendsBox li aside button:last-child{
+    color: rgb(238, 163, 163);
+}
+.FriendsBox li aside button:hover{
+    color: rgb(115, 115, 238);
+}
+.FriendsBox li aside button:last-child:hover{
+    color: rgb(238, 123, 123);
+}
+.Btns{
+    /* display: inline; */
+    float: right;
+    margin-top: 13px;
+    margin-right: 15px;
+}
+.Popup{
+    position: absolute;
+    background-color: white;
+    padding: 15px 20px;
+    box-shadow: 2px 3px 5px rgba(0,0,0,0.2);
+    display: none;
+}
+.FriendsBox li{
+    position: relative;
+    text-transform: capitalize;
+    padding: 0;
+    text-align: left;
+    font-weight: 600;
+    color: white;
+    margin-left: 20px;
+}
+
+.FriendsBox li:hover .Popup{
+    display: block;
+}
+.FriendsBox li img{
+    display: inline-block;
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+    transform: translateY(25%);
+    margin-right: 10px;
+}

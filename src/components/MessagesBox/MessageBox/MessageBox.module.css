@@ -1,0 +1,121 @@
+.MessageBox{
+    width:65%;
+    height: 100%;
+    background-color: rgba(210, 216, 221, 0.911);
+    /* margin: 50px auto; */
+    overflow-y: auto;
+    overflow-x: hidden;
+    border-radius: 3px;
+    border-top-right-radius: 0px;
+    position: relative;
+}
+.ChatHead{
+    background-color: rgb(157, 157, 167);
+    text-align: left;
+    padding: 1px 5px;
+}
+
+.ChatHead span{
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    background-size: cover;
+    background-position: center;
+    border-radius: 50%;
+    transform: translateY(4.5%);
+}
+.ChatHead b{
+    display: inline-block;
+    margin: auto 9px;
+    transform: translateY(-60%);
+    text-transform: uppercase;
+    font-size: 14px;
+
+}
+.ChatHead button{
+    float: right;
+    transform: translateY(90%);
+    margin-right: 20px;
+    background-color: transparent;
+    border: none;
+    outline:none;
+    font-size: 15px;
+    font-weight: 600;
+    color: rgb(199, 8, 8);
+    cursor: pointer;
+}
+.MessageBox ul{
+    list-style: none;
+    padding:0 20px;
+}
+
+.MessageBox ul li{
+    margin-bottom: 10px;
+}
+.ListFriend{
+    text-align: left;    
+}
+.ListMe{
+    text-align: right;
+}
+.Friend, .Me{
+    background-color: white;
+    width: 70%;
+    display: inline-block;
+    padding: 5px 8px;
+}
+
+.Friend span{
+    width:10px;
+    height:20px;
+    clip-path: polygon(0 46%, 100% 100%, 100% 0);
+    background-color: white;
+    float:left;
+    transform: translateX(-150%);
+}
+.Me span{
+    width:10px;
+    height:20px;
+    clip-path: polygon(0 0, 0 100%, 100% 47%);
+    background-color:white;
+    float:right;
+    transform: translateX(150%);
+}
+.Time{
+   margin-right: 10px;
+   float: left;
+}
+.Time2{
+    margin-left: 10px;
+    float: right;
+}
+.MessageBox form{
+    width: 100%;
+    background-color: rgb(211, 40, 40);
+    padding: 3px 2px;
+    position: absolute;
+    bottom: 0px;
+}
+
+.MessageBox form input{
+    padding: 3px 5px;
+    width: 50%;
+    border: none;
+    border-radius: 3px;
+    margin-bottom: 2px;
+    
+}
+.MessageBox form input:focus{
+    outline: 1px solid blue;
+}
+.MessageBox form button{
+    border: none;
+    outline:none;
+    font-size: 15px;
+    font-weight: 600;
+    color: rgb(199, 14, 14);
+    cursor: pointer;
+    margin-left: 10px;
+    border-radius: 2px;
+}
+

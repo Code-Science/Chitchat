@@ -1,0 +1,10 @@
+.Dashboard{
+    width: 75%;
+    position: relative;
+    margin: auto;
+    margin-top: 5vh;
+    z-index: 10;
+    background-color: rgba(204, 204, 204, 0.89);
+    border-radius: 30px;
+    height: 550px;
+}

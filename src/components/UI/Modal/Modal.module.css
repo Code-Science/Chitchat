@@ -1,0 +1,36 @@
+.Modal{
+    /* background-image: linear-gradient(to right bottom, #be7c76, #b6483e); */
+    background-color: white;
+    position: fixed;
+    z-index: 110000;
+    top: 15vh;
+    left: 20vw;
+    transition: all .5s;
+    width: 60%;
+    color: black;
+    box-shadow: 0 2.5rem 4rem rgba(0,0,0,0.5);
+    padding: 2rem 5rem;
+    padding-bottom: 0rem;
+
+}
+@media (max-width:750px){
+    .Modal{
+        width: 70%;
+        left: 16vw;
+
+    
+    }
+}
+@media (max-width:500px){
+    .Modal{
+        width: 80%;
+        left: 10vw;
+        padding: 2rem 3rem;
+        padding-bottom: 1rem;
+    }
+}
+/* #b63e3ee7 
+#7e2a2ae7 */
+
+/* #be7676, #b63e3e */
+

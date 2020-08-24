@@ -1,0 +1,20 @@
+.SearchPage{
+    width:90%;
+    height:350px;
+    background-color: white;
+    margin: auto;
+    border-radius: 3px;
+}
+.SearchPage ul{
+    list-style: none;
+    padding: 0px;;
+}
+
+.SearchPage ul li{
+    background-color: tomato;
+    text-transform: uppercase;
+    font-weight: 600;
+}
+.SearchPage ul li button:not(:last-child){
+    margin-left: 10px;
+}
