@@ -104,7 +104,7 @@ const Dashboard = (props) => {
     }
 
     const changeSelectedFriend = (event, name, id) =>{
-        // event.preventDefault();
+        event.preventDefault();
           setSelectedFriend({
               name: name,
               id:id
@@ -128,8 +128,8 @@ const Dashboard = (props) => {
         });
     }
 
-    const openChatBox = (event)=>{
-        event.preventDefault();
+    const openChatBox = ()=>{
+        // event.preventDefault();
         setUIState({
             ...UIState,
             searchPageShow:false,

@@ -29,8 +29,8 @@ const FriendsBox = (props) => {
         data = props.friends.map((friend, i )=> {
             return <li key={i+friend}><img src={img} />{friend.name}
                   <aside className={classes.Btns}>
-                    <button onClick={(event, name, id)=> props.selectPerson(event, friend.name, friend.id)}><i className="fas fa-envelope-square"></i></button>
-                    <button onClick={(event, friendId) => removeFriendHandler(event, friend.id)}><i className="fas fa-users-slash"></i></button>
+                    <button onClick={(event)=> props.selectPerson(event, friend.name, friend.id)}><i className="fas fa-envelope-square"></i></button>
+                    <button onClick={(event) => removeFriendHandler(event, friend.id)}><i className="fas fa-users-slash"></i></button>
                   </aside>
                 </li>
         });
