@@ -43,6 +43,7 @@
     margin-left: 20px;
     display: inline-block;
     padding-top: 10px;
+    text-transform: capitalize;
 }
 .MessagesBox ul li p{
     margin:0;
@@ -56,4 +57,7 @@
     margin: 0px auto;
     color: rgb(76, 71, 71);
     width:80%;
+}
+.Unseen{
+    color: red !important;
 }

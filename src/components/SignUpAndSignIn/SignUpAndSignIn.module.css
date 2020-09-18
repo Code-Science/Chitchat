@@ -1,10 +1,11 @@
 .Box h1{
     color: red;
-    margin-top: 15vh;
+    margin-top: 17vh;
+    margin-bottom: 1.5vh;
 }
 
 .Box form{
-    background-color: #ccc;
+    /* background-color: #ccc; */
     width: 40%;
     margin: auto;
     padding-bottom: 30px;
@@ -14,30 +15,62 @@
 .Box label{
     display: block;
     margin:10px 0;
+
 }
 .Input{
     width: 50%;
-    padding: 7px;
+    padding: 8px 15px;
     position: relative;
     right:0;
+    box-shadow: 0.5px 1px 4px rgba(0,0,0,0.2);
+    border: 1px solid rgb(206, 203, 203);
+    border-radius: 5px;
+
+}
+.Input::placeholder{
+    color: rgb(185, 179, 179);
 }
 
 .Box label span{
     width:20%;
     display: inline-block;
-    color: blue;
+    color: rgb(96, 96, 100);
+    font-weight: 700;
 }
 .Box button{
-    color: white;
-    margin-top: 10px;
-    width: 75%;
-    background-color: rgb(79, 79, 243);
+    color: rgb(94, 91, 91);
+    margin-top: 25px;
+    background-color: rgba(214, 214, 218, 0.664);
     outline: none;
     border: none;
-    height: 35px;
+    padding: 13px 60px;
+    border-radius: 4px;
+    font-weight: 600;
+    clip-path: polygon(75% 0%, 100% 50%, 75% 100%, 0% 100%, 25% 50%, 0% 0%);
+    position: relative;
+}
+.Box button::after{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(to right,transparent 10%, rgba(92, 92, 100, 0.664) );
+    border-radius: 10rem;
+    transition: all .3s ease-out ;
+    opacity: 1;
+    outline: none;
+    border: none;
+    animation: move 17s ease-out;
+    animation-iteration-count: infinite;
+    animation-delay: 1s;
+    animation-fill-mode: backwards;
+    clip-path: polygon(75% 0%, 100% 50%, 75% 100%, 0% 100%, 25% 50%, 0% 0%);
 }
 .Box button:hover{
-    background-color: rgb(110, 110, 250);
+    background-color: rgb(221, 221, 221);
     cursor: pointer;
 }
 .Box h3{
@@ -45,6 +78,7 @@
 }
 .Box p{
     font-size: 13px;
+    margin-bottom: 15px;
 }
 .Box p strong{
     color: rgb(247, 38, 38);
@@ -64,4 +98,13 @@
     padding: 2px 4px;
     margin: 0 auto;
     font-weight: 400;
+}
+@keyframes move{
+    0%{
+        transform: translateX(-900px);
+    }
+    100%{
+        transform: translateX(900px);
+
+    }
 }

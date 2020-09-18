@@ -1,18 +1,31 @@
 .Modal{
     /* background-image: linear-gradient(to right bottom, #be7c76, #b6483e); */
-    background-color: white;
+    background-color: rgb(233, 231, 231);
     position: fixed;
     z-index: 110000;
-    top: 15vh;
-    left: 20vw;
+    top: 10vw;
+    left: 28vh;
     transition: all .5s;
     width: 60%;
     color: black;
     box-shadow: 0 2.5rem 4rem rgba(0,0,0,0.5);
     padding: 2rem 5rem;
     padding-bottom: 0rem;
-
+    min-height: 200px;
+    max-height: 350px;
+    overflow: auto;
 }
+.Modal ul{
+    list-style: none;
+}
+.Modal ul li{
+    padding: 0px;
+    font-size: 14px;
+    font-weight: 600;
+    color: gray;
+}
+
+
 @media (max-width:750px){
     .Modal{
         width: 70%;

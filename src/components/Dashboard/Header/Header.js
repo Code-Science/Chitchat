@@ -12,9 +12,9 @@ const Header = props => {
 
     return (
        <div className={classes.Header}>
-           <Nav color = {color}  switchPage={props.switchPage} reqModal={props.requestModal}/>
+           <Nav color = {color}  switchPage={props.switchPage} reqModal={props.requestModal} searchPageShow={props.searchPageShow}/>
            <div className={classes.Head}>
-               <ImageDisplay height='70px'/>
+               <ImageDisplay height='70px' userData={props.userData}/>
                <p><strong>{props.userData? props.userData.username.toUpperCase(): null}</strong></p>
                {props.requests?<p className={classes.Para}> you have {props.requests.length} friend {props.requests.length > 1 ? 'requests' : 'request'}</p> : 
             null}

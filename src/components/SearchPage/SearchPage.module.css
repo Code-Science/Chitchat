@@ -1,20 +1,87 @@
 .SearchPage{
-    width:90%;
-    height:350px;
-    background-color: white;
+    width:85%;
+    height:320px;
+    background-color: rgba(250, 249, 249, 0.822);
     margin: auto;
     border-radius: 3px;
+    padding: 20px;
+    padding-bottom: 10px;
 }
 .SearchPage ul{
     list-style: none;
-    padding: 0px;;
+    padding: 0px;
+    overflow: auto;
+    min-height: 270px;
+    background-color: rgb(240, 239, 239);
+
 }
 
 .SearchPage ul li{
-    background-color: tomato;
     text-transform: uppercase;
     font-weight: 600;
+    padding: 5px 20px;
+    width: 80%;
+    margin: auto;
+    color: rgb(114, 113, 113);
+    font-size: 15px;
+    word-spacing: 2px;
 }
 .SearchPage ul li button:not(:last-child){
-    margin-left: 10px;
+    margin-left: 30px;
+}
+.SearchPage ul li button{
+    border:none;
+    outline: none;
+    color:white;
+    font-size: 12px;
+    font-weight: 600;
+    background-color: rgb(136, 136, 194);
+    padding: 4px 6px;
+    margin-left: 5px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+.SearchPage ul li button:last-child{
+    background-color: rgb(123, 180, 131);
+}
+.SearchPage input{
+    width: 40%;
+    padding: 4px 8px;
+    outline: none;
+    background-color: white;
+    border: 1px solid rgb(160, 159, 159);
+    border-radius: 5px;
+}
+.SearchPage input::placeholder{
+    color: rgb(177, 172, 172);
+}
+.SearchButton{
+    padding: 4px 10px;
+    background-color: rgb(131, 125, 125);
+    /* border: 1px solid rgb(102, 100, 100); */
+    border:none;
+    border-radius: 5px;
+    color:white;
+    margin-left: 5px;
+    outline: none;
+}
+.SearchButton:hover{
+    background-color: rgb(107, 105, 105);
+    cursor: pointer;
+}
+.SearchPage .Initial{
+    color: rgb(158, 157, 157);
+    font-size: 13px;
+}
+.DivImage{
+    display: inline-block;
+    width:50px;
+    height: 50px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    border-radius: 50%;
+    transform: translateY(30%);
+    margin-right: 10px;
+
 }

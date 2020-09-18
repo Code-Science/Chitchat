@@ -8,7 +8,6 @@ import Spinner from '../UI/Spinner/Spinner';
  
 const MainBody = (props) =>{
     const firebase = useContext(FirebaseContext);
-    
 
     return (
         <div className={classes.MainBody} style={{visibility: props.show? "visible": "hidden"}}>

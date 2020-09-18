@@ -9,8 +9,9 @@ const Nav = props => {
        <div className={classes.Nav} style={{backgroundColor:props.color}}>
            <p>CHITCHAT</p>
            <ul>
+               <li><button onClick={props.switchPage}>{props.searchPageShow? "MESSAGES" : "SEARCH"}</button></li>
                <li><button onClick={props.reqModal}>REQUESTS</button></li>
-               <li><button onClick={props.switchPage}>SEARCH</button></li>
+               {/* <li><button onClick={props.switchPage}>{props.searchPageShow? "MESSAGES" : "SEARCH"}</button></li> */}
                <li><button onClick={firebase.doSignOut}>LOGOUT</button></li>
            </ul>
        </div>

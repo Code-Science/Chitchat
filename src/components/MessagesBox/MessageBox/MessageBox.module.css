@@ -1,10 +1,9 @@
 .MessageBox{
     width:65%;
     height: 100%;
-    background-color: rgba(210, 216, 221, 0.911);
+    /* background-color: rgba(210, 216, 221, 0.911); */
+    background-color: rgba(227, 227, 228, 0.911);
     /* margin: 50px auto; */
-    overflow-y: auto;
-    overflow-x: hidden;
     border-radius: 3px;
     border-top-right-radius: 0px;
     position: relative;
@@ -45,8 +44,10 @@
     cursor: pointer;
 }
 .MessageBox ul{
+    height:70%;
     list-style: none;
     padding:0 20px;
+    overflow: auto;
 }
 
 .MessageBox ul li{
@@ -60,9 +61,13 @@
 }
 .Friend, .Me{
     background-color: white;
-    width: 70%;
+    max-width: 70%;
     display: inline-block;
     padding: 5px 8px;
+    color: rgb(75, 74, 74);
+    font-size: 13px;
+    box-shadow: 1px 2px 4px rgba(0,0,0,0.2);
+    border-radius: 3px;
 }
 
 .Friend span{
@@ -81,18 +86,32 @@
     float:right;
     transform: translateX(150%);
 }
+.Time, .Time2{
+    display: flex;
+    flex-direction: column;
+    font-size: 11px;
+    color: rgb(151, 150, 150);
+    text-align: center; 
+    margin-top: 3px;
+}
 .Time{
-   margin-right: 10px;
-   float: left;
+    margin-right: 20px;
+    float: left;
 }
 .Time2{
-    margin-left: 10px;
+    margin-left: 20px;
     float: right;
 }
+.MessageBox ul li em:last-child{
+    color:rgba(255, 0, 0, 0.671);
+    font-size: 8px;
+}
+
 .MessageBox form{
-    width: 100%;
+    width: 99.5%;
     background-color: rgb(211, 40, 40);
     padding: 3px 2px;
+    padding-top: 5px;
     position: absolute;
     bottom: 0px;
 }
@@ -117,5 +136,8 @@
     cursor: pointer;
     margin-left: 10px;
     border-radius: 2px;
+}
+.chatImage{
+    max-width: 220px;
 }
 

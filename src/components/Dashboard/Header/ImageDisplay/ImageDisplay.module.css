@@ -1,8 +1,48 @@
 
-.ImageDisplay img{
-    height: 100%;
-    margin-top: 20px;
-    border-radius: 5px;
+.ImageDisplay{
+    position: relative;
+}
+.Wraper{
     border: 2px solid white;
+    width:100px;
+    transform: translateY(20px);
+    border-radius: 5px;
+    margin:auto;
 
+}
+
+.Image{
+    width:100px;
+    border-radius: 5px;
+    filter: blur(0);
+    transition: filter .5s;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+
+}
+.IconUpload{
+    font-size: 25px;
+    position:absolute;
+    top: 50%;
+    left:50%;
+    transform: translate(-50%,-50%);
+    color: rgba(235, 235, 235, 0.74);
+    opacity: 0;
+    transition: all .5s;
+    cursor:pointer;
+}
+
+.IconUpload:hover{
+    opacity:1;
+    color: rgba(235, 235, 235, 0.877);
+}
+.Wraper:hover .Image{
+    filter: blur(2px);
+}
+.IconUpload:hover + .ImageDisplay img{
+    filter: blur(2px);
+}
+.Image:hover + .IconUpload{
+    opacity:1;
 }
