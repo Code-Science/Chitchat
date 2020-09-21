@@ -45,14 +45,7 @@ const SignUpAndSignIn = (props) =>{
     }
 
     const [entry, setEntry] = useState('Sign up');
-    const [user, setUser] = useState({
-        username: '',
-        email: '',
-        passwordOne: '',
-        passwordTwo: ''
-      });
-
-
+   
     const changeToLoginHandler = () =>{
           setEntry('Login');
           setError(false);
@@ -67,11 +60,6 @@ const SignUpAndSignIn = (props) =>{
         const emailInput = document.getElementById('email').value;
         const passwordInput = document.getElementById('password').value;
 
-        // const authData = {
-        //     email: emailInput.value,
-        //     password: passwordInput.value,
-        //     returnSecureToken: true
-        // }
         if(entry === 'Login'){
             firebase.doSignInWithEmailAndPassword(emailInput, passwordInput)
             .then(() => {
@@ -82,6 +70,7 @@ const SignUpAndSignIn = (props) =>{
             });
         }
         else{
+         if(nameInput.value){
             firebase.doCreateUserWithEmailAndPassword(emailInput, passwordInput)
             .then((authUser) => {
                 setError(false);
@@ -103,6 +92,10 @@ const SignUpAndSignIn = (props) =>{
             .catch(error => {
                 setError(true);
             });
+         }else{
+               nameInput.className = [classes.Input,classes.Warning].join(' ');
+               setError(true);
+         }
         }
      
     }
