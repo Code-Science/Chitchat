@@ -1,6 +1,6 @@
 import React, {useState, useContext, useEffect} from 'react';
 import classes from './ImageDisplay.module.css';
-import pic from '../../../../assets/user.jpg';
+import pic from '../../../../assets/user.png';
 import Aux from "../../../hoc/Auxx";
 import Modal from "../../../UI/Modal/Modal";
 import FirebaseContext from '../../../Firebase/context';
@@ -95,9 +95,9 @@ const ImageDisplay = props => {
     }
     return (
         <Aux>
-            <div className={classes.ImageDisplay} style={{height:props.height}}>
+            <div className={classes.ImageDisplay}>
                 <div className={classes.Wraper}>
-                    <div style={{backgroundImage:"url("+imageSrc+")", height:props.height}} className={classes.Image}></div>
+                    <div style={{backgroundImage:"url("+imageSrc+")"}} className={classes.Image}></div>
                     <i className={styles.join(" ")} onClick={uploadPictureHandler}></i>
                 </div>
             </div>

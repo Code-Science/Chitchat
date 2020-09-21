@@ -1,10 +1,9 @@
 .Modal{
-    /* background-image: linear-gradient(to right bottom, #be7c76, #b6483e); */
     background-color: rgb(233, 231, 231);
     position: fixed;
     z-index: 110000;
-    top: 10vw;
-    left: 28vh;
+    top: 20vh;
+    left: 12vw;
     transition: all .5s;
     width: 60%;
     color: black;
@@ -24,26 +23,60 @@
     font-weight: 600;
     color: gray;
 }
-
+@media (max-width:1000px){
+    .Modal{
+        left: 11vw;
+    }
+}
+@media (max-width:900px){
+    .Modal{
+        left: 10vw;
+    }
+}
 
 @media (max-width:750px){
     .Modal{
-        width: 70%;
-        left: 16vw;
-
-    
+        left: 9vw;
     }
 }
-@media (max-width:500px){
+@media (max-width:700px){
     .Modal{
-        width: 80%;
-        left: 10vw;
-        padding: 2rem 3rem;
-        padding-bottom: 1rem;
+        left: 8vw;
     }
 }
-/* #b63e3ee7 
-#7e2a2ae7 */
+@media (max-width:650px){
+    .Modal{
+        left: 7vw;
+    }
+}
+@media (max-width:600px){
+    .Modal{
+        left: 11vw;
+        padding: 2rem 3rem;
 
-/* #be7676, #b63e3e */
+    }
+}
+@media (max-width:477px){
+    .Modal{
+        left: 14vw;
+        padding: 1rem 2rem;
+
+    }
+    .Modal ul{
+        padding:0px;
+    }
+}
+@media (max-width:400px){
+    .Modal{
+        left: 12vw;
+
+    }
+}
+@media (max-width:350px){
+    .Modal{
+        left: 10.5vw;
+
+    }
+}
+
 

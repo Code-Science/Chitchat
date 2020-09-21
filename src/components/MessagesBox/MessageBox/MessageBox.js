@@ -1,6 +1,6 @@
 import React, { useEffect, useState, useContext } from 'react';
 import classes from './MessageBox.module.css';
-import img from '../../../assets/pinkRose.jpg';
+import img from '../../../assets/user.png';
 import FirebaseContext from '../../Firebase/context';
 import Modal from '../../UI/Modal/Modal';
 import Aux from "../../hoc/Auxx";
@@ -30,7 +30,6 @@ const MessageBox = (props) =>{
                 });
                 setChatData(data);
                 setKeys(keysArray)
-                console.log(keysArray);
 
             }
         }, function(error) {
@@ -226,15 +225,15 @@ const MessageBox = (props) =>{
             const time = new Date(message.createdAt);
             if(message.id == firebase.auth.currentUser.uid){
                 if(typeof message.message === "string"){
-                   return  <li key={i+message.name} className={classes.ListMe}><aside className={classes.Me}><span></span>{message.message}</aside><span className={classes.Time2}><em>{(time.getHours()).toFixed(2)}</em><em>{time.toDateString().slice(4,10)}</em></span></li>
+                   return  <li key={i+message.name} className={classes.ListMe}><aside className={classes.Me}><span></span>{message.message}</aside><span className={classes.Time2}><em>{`${time.getHours()}.${time.getMinutes()}`}</em><em>{time.toDateString().slice(4,10)}</em></span></li>
                 }else{
-                    return  <li key={i+message.name} className={classes.ListMe}><aside className={classes.Me}><span></span>{generateHtmlTag(message.message.type,message.message.url)}</aside><span className={classes.Time2}><em>{(time.getHours()).toFixed(2)}</em><em>{time.toDateString().slice(4,10)}</em></span></li>
+                    return  <li key={i+message.name} className={classes.ListMe}><aside className={classes.Me}><span></span>{generateHtmlTag(message.message.type,message.message.url)}</aside><span className={classes.Time2}><em>{`${time.getHours()}.${time.getMinutes()}`}</em><em>{time.toDateString().slice(4,10)}</em></span></li>
                 }
             }else{
                 if(typeof message.message === "string"){
-                    return  <li key={i+message.name} className={classes.ListFriend}><span className={classes.Time}><em>{(time.getHours()).toFixed(2)}</em><em>{time.toDateString().slice(4,10)}</em></span><aside className={classes.Friend}><span></span>{message.message}</aside></li>
+                    return  <li key={i+message.name} className={classes.ListFriend}><span className={classes.Time}><em>{`${time.getHours()}.${time.getMinutes()}`}</em><em>{time.toDateString().slice(4,10)}</em></span><aside className={classes.Friend}><span></span>{message.message}</aside></li>
                 }else{
-                    return  <li key={i+message.name} className={classes.ListFriend}><span className={classes.Time}><em>{(time.getHours()).toFixed(2)}</em><em>{time.toDateString().slice(4,10)}</em></span><aside className={classes.Friend}><span></span>{generateHtmlTag(message.message.type,message.message.url)}</aside></li>
+                    return  <li key={i+message.name} className={classes.ListFriend}><span className={classes.Time}><em>{`${time.getHours()}.${time.getMinutes()}`}</em><em>{time.toDateString().slice(4,10)}</em></span><aside className={classes.Friend}><span></span>{generateHtmlTag(message.message.type,message.message.url)}</aside></li>
                 }
             }
         });
@@ -254,7 +253,7 @@ const MessageBox = (props) =>{
         <Aux>
             <div className={classes.MessageBox} >
                 <div className={classes.ChatHead}>
-                <span style={{backgroundImage:'url('+img+')'}}></span><b>{props.selectedPerson? props.selectedPerson.name:"Person"}</b>
+                <span style={{backgroundImage:`url(${props.selectedPerson? props.selectedPerson.imageUrl?  props.selectedPerson.imageUrl: img : img})`}}></span><b>{props.selectedPerson? props.selectedPerson.name:"Person"}</b>
                 <button onClick={props.close}>Exit</button>
                 </div>
                 <ul id='messageList'>
@@ -265,7 +264,7 @@ const MessageBox = (props) =>{
                 <form>
                 <input type='text' placeholder='Enter message  here ... ' id="messageInput"/>
                 <button onClick={(event)=>sendMessage(event, props.selectedPerson.id)}>Enter</button>
-                <button onClick={event => switchModal(event)}><i class="fas fa-photo-video"></i></button>
+                <button onClick={event => switchModal(event)}><i className="fas fa-photo-video"></i></button>
                 </form>
 
             </div>

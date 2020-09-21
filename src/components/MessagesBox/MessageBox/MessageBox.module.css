@@ -1,17 +1,18 @@
 .MessageBox{
-    width:65%;
-    height: 100%;
+    width:68%;
+    height: 97%;
     /* background-color: rgba(210, 216, 221, 0.911); */
-    background-color: rgba(227, 227, 228, 0.911);
+    background-color: rgba(227, 227, 228, 0.856);
     /* margin: 50px auto; */
     border-radius: 3px;
-    border-top-right-radius: 0px;
+    margin-left: 4%;
     position: relative;
+
 }
 .ChatHead{
     background-color: rgb(157, 157, 167);
     text-align: left;
-    padding: 1px 5px;
+    padding: 3px 10px;
 }
 
 .ChatHead span{
@@ -29,6 +30,7 @@
     transform: translateY(-60%);
     text-transform: uppercase;
     font-size: 14px;
+    color: rgb(100, 8, 8);
 
 }
 .ChatHead button{
@@ -40,11 +42,11 @@
     outline:none;
     font-size: 15px;
     font-weight: 600;
-    color: rgb(199, 8, 8);
+    color: white;
     cursor: pointer;
 }
 .MessageBox ul{
-    height:70%;
+    height:79%;
     list-style: none;
     padding:0 20px;
     overflow: auto;
@@ -109,15 +111,15 @@
 
 .MessageBox form{
     width: 99.5%;
-    background-color: rgb(211, 40, 40);
-    padding: 3px 2px;
-    padding-top: 5px;
+    background-color: rgb(94, 90, 90);
+    padding: 8px 2px;
+    padding-top: 9px;
     position: absolute;
     bottom: 0px;
 }
 
 .MessageBox form input{
-    padding: 3px 5px;
+    padding: 4.4px 10px;
     width: 50%;
     border: none;
     border-radius: 3px;
@@ -128,16 +130,110 @@
     outline: 1px solid blue;
 }
 .MessageBox form button{
+    padding: 3px 10px;
     border: none;
     outline:none;
     font-size: 15px;
     font-weight: 600;
-    color: rgb(199, 14, 14);
+    color: rgb(115, 117, 124);
     cursor: pointer;
     margin-left: 10px;
     border-radius: 2px;
+    transform: translateY(3.5%);
+}
+.MessageBox form button:hover{
+    background-color: rgb(219, 218, 218);
 }
 .chatImage{
     max-width: 220px;
+}
+
+@media (max-width:1100px){
+    .MessageBox{
+        margin-left: 2%;
+    }
+    .chatImage{
+        max-width: 200px;
+    }
+}
+
+@media (max-width:1000px){
+    .MessageBox{
+        width:64.5%;
+    }
+}
+
+@media (max-width:900px){
+    .MessageBox{
+        width:85.1%;
+        margin-left: 7.3%;
+    }
+    .chatImage{
+        max-width: 150px;
+    }
+    
+    
+}
+
+@media (max-width:600px){
+    .MessageBox{
+        width:100%;
+        margin-left: 0%;
+        height: 100%;
+    } 
+    .ChatHead span{
+        width: 30px;
+        height: 30px;
+    }
+    .ChatHead b{
+        font-size: 13px;
+    
+    }
+
+    .ChatHead button{
+        transform: translateY(40%);
+        margin-right: 10px;
+        font-size: 14px;
+        color: rgb(95, 20, 20);
+    }
+    
+    .MessageBox form{
+        padding: 4px 2px;
+        padding-top: 6px;
+    }
+    .MessageBox ul{
+        height:85%;
+        padding:0 15px;
+    }
+    .MessageBox form button{
+        padding: 2px 5px;
+        font-size: 13px;
+        transform: translateY(3%);
+    }
+    .MessageBox form input{
+        padding: 3px 10px;
+        width: 60%;
+        
+    }
+    
+    
+    
+    
+}
+@media (max-width:400px){
+    .ChatHead button{
+        font-size: 13px;
+        margin-right: 5px;
+        transform: translateY(45%);
+    }
+
+    .MessageBox form button{
+        padding: 2px 5px;
+        font-size: 13px;
+        transform: translateY(1%);
+    }
+
+
+    
 }
 

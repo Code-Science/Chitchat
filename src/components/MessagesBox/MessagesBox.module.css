@@ -1,11 +1,14 @@
 .MessagesBox{
     width:65%;
-    height: 100%;
-    background-color: rgba(236, 233, 233, 0.911);
+    height: 90%;
+    background-color: rgba(228, 228, 228, 0.836);
     /* margin: 50px auto; */
     overflow-y: auto;
     overflow-x: hidden;
     border-radius: 3px;
+    margin-left: 4%;
+    padding: 20px 20px;
+    /* transform: translateY(-20px); */
 }
 
 .MessagesBox ul{
@@ -23,14 +26,13 @@
 
 }
 .MessagesBox ul li:hover{
-    background-color: gainsboro;
+    background-color: rgba(196, 195, 195, 0.267);
 }
 .MessagesBox ul li a{
     text-decoration: none;
     color: rgb(5, 5, 5);
 }
 .MessagesBox ul li span{
-    /* display: inline-block; */
     width: 50px;
     height: 50px;
     background-size: cover;
@@ -38,6 +40,8 @@
     border-radius: 50%;
     float:left;
     transform: translateY(10%);
+    border: 1px solid rgb(182, 180, 180);
+    box-shadow: 2px 3px 6px rgba(0,0,0,0.2);
 }
 .MessagesBox ul li b{
     margin-left: 20px;
@@ -53,11 +57,82 @@
     margin-top: 5px;
 
 }
-.MessagesBox hr{
-    margin: 0px auto;
-    color: rgb(76, 71, 71);
+.MessagesBox ul hr{
+    display: block; 
+    height: 1px;
+    border: 0; 
+    border-top: 1px solid rgb(160, 158, 158);
+    margin: 0 auto; 
+    padding: 0;
     width:80%;
+    margin-top: 5px;
 }
 .Unseen{
     color: red !important;
+}
+
+
+@media (max-width:1100px){
+    .MessagesBox{
+        margin-left: 2%;
+    }
+}
+
+@media (max-width:1000px){
+    .MessagesBox{
+        width:60%;
+    }
+}
+
+@media (max-width:900px){
+    .MessagesBox{
+        width:80%;
+        margin-left: 7.3%;
+    }
+    
+}
+
+@media (max-width:600px){
+    .MessagesBox{
+        width:100%;
+        margin-left: 0%;
+        height: 98%;
+        padding: 3px 7px;
+
+    } 
+    .MessagesBox ul li span{
+        width: 40px;
+        height: 40px;
+        transform: translateY(20%);
+    }
+    .MessagesBox ul li b{
+        font-size: 14px;
+        margin-left: 15px;
+    }
+
+    .MessagesBox ul li p{
+        transform: translateX(3%);
+        font-size: 12px;
+        margin-top: 3px;
+    
+    }
+    .MessagesBox ul hr{
+        margin-top: 0px;
+    } 
+    .MessagesBox ul li{
+        height: 48px;
+    
+    }
+}
+@media (max-width:400px){
+    .MessagesBox{
+        padding: 3px 5px;
+
+    } 
+    .MessagesBox ul li{
+        height: 48px;
+        padding: 3px 10px;
+    
+    }
+    
 }

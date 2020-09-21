@@ -1,12 +1,12 @@
 .Dashboard{
-    width: 75%;
+    width: 100%;
     position: relative;
-    margin: auto;
-    margin-top: 5vh;
+    margin: 0 auto;
+    margin-top: -4vh;
     z-index: 10;
-    background-color: rgba(204, 204, 204, 0.89);
-    border-radius: 30px;
-    height: 550px;
+    background-color: rgba(204, 204, 204, 0.178);
+    /* border-radius: 30px; */
+    height: 100vh;
 }
 .listItemRequests{
      display: flex;
@@ -20,6 +20,8 @@
     background-position: center;
     border-radius: 50%;
     margin-right: 15px;
+    border: 1px solid rgb(182, 180, 180);
+    box-shadow: 2px 3px 6px rgba(0,0,0,0.2);
 
 }
 .listItemRequests button{
@@ -42,4 +44,30 @@
     padding: 5px 9px;
 
 
+}
+
+@media (max-width:600px){
+    .DivImage{
+        width:35px;
+        height: 35px;
+        margin-right: 10px;
+        transform: translateY(8%);
+    
+    }
+    .listItemRequests button{
+        margin-left: 15px;
+        font-size: 11px;
+        padding: 4px 5px;
+        border-radius: 3px;
+        transform: translateY(-2%);
+    }
+    .listItemRequests button:last-child{
+        margin-left: 4px;
+        padding: 4px 6px;
+    
+    
+    }
+    
+    
+    
 }

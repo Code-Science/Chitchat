@@ -1,13 +1,14 @@
 .FriendsBox{
-    width:35%;
-    height: 100%;
-    background-color: rgb(90, 83, 83);
-    /* margin: 50px auto; */
-    /* z-index: 20; */
+    position: absolute;
+    width:26%;
+    height: 80%;
+    background-color: rgba(90, 83, 83, 0.74);
     overflow: auto;
     border-radius: 3px;
     border-top-left-radius: 0px;
     border-bottom-left-radius: 0px;
+    right:2%;
+    top: 12.9vh;
 }
 .FriendsBox ul{
     margin: 0;
@@ -18,7 +19,7 @@
      border: none;
      outline: none;
      background-color: transparent;
-     color: rgb(164, 164, 250);
+     color: rgb(150, 150, 150);
      font-weight: 700;
      cursor: pointer;
 }
@@ -32,10 +33,10 @@
     color: rgb(238, 163, 163);
 }
 .FriendsBox li aside button:hover{
-    color: rgb(115, 115, 238);
+    color: rgb(128, 128, 128);
 }
 .FriendsBox li aside button:last-child:hover{
-    color: rgb(238, 123, 123);
+    color: rgb(228, 122, 122);
 }
 .Btns{
     /* display: inline; */
@@ -70,4 +71,36 @@
     border-radius: 50%;
     transform: translateY(25%);
     margin-right: 10px;
+}
+
+@media (max-width:1100px){
+    .FriendsBox{
+        width:28%;
+    }
+}
+
+@media (max-width:1000px){
+    .FriendsBox{
+        width:33%;
+    }
+}
+
+@media (max-width:900px){
+    .FriendsBox{
+        width:270px;
+        height: 81.7%;
+        background-color: rgba(90, 83, 83, 0.904);
+        transition: all 1s;
+        position: absolute;
+        z-index:900;
+        right: 0;
+        top: 10.9vh;
+    }
+}
+@media (max-width:600px){
+    .FriendsBox{
+        height: 100%;
+        top: 6.9vh;
+
+    }
 }

@@ -6,7 +6,7 @@ import FirebaseContext from '../../components/Firebase/context';
 import Aux from '../hoc/Auxx';
 import Modal from '../UI/Modal/Modal';
 import MainBody from '../MainBody/MainBody';
-import img from "../../assets/pinkRose.jpg";
+import img from "../../assets/user.png";
 
 
 const Dashboard = (props) => {
@@ -19,11 +19,14 @@ const Dashboard = (props) => {
     const [chatBoxSpinner, setChatBoxSpinner] = useState(false);
     const [userData, setUserData] = useState(null);
     const [requests, setRequests] = useState(null);
+    const [requestSeen, setRequestSeen] = useState(true);
     const [friends, setFriends] = useState(null);
     const [friendsKeys, setFriendsKeys] = useState(null);
+    const [friendsBoxDisplay, setFriendsBoxDisplay] = useState(true);
     const [selectedFriend, setSelectedFriend] = useState({
         name: 'person',
-        id: ""
+        id: "",
+        imageUrl: null
     });
 
    
@@ -34,7 +37,6 @@ const Dashboard = (props) => {
             if(snapshot && snapshot.val()){
             const data = snapshot.val();
             setUserData(data);
-            console.log(data);
             }
         }, function(error) {
             if (error) {
@@ -42,7 +44,6 @@ const Dashboard = (props) => {
               console.log(error);
             } else {
               // Data saved successfully!
-              console.log(uid, "successfull");
 
             }
         });
@@ -61,7 +62,6 @@ const Dashboard = (props) => {
                 });
             setFriends(data);
             setFriendsKeys(keysArray);
-            console.log(data);
             }
         }, function(error) {
             if (error) {
@@ -69,7 +69,6 @@ const Dashboard = (props) => {
               console.log(error);
             } else {
               // Data saved successfully!
-              console.log("successfull");
 
             }
         });
@@ -86,7 +85,7 @@ const Dashboard = (props) => {
                         return data;
                     });
                     setRequests(data);
-                    console.log(data);
+                    setRequestSeen(false);
                 }
             });
             return () => listener();
@@ -101,11 +100,12 @@ const Dashboard = (props) => {
 
     }
 
-    const changeSelectedFriend = (event, name, id) =>{
+    const changeSelectedFriend = (event, name, id, image) =>{
         event.preventDefault();
           setSelectedFriend({
               name: name,
-              id:id
+              id:id,
+              imageUrl:image
           });
           triggerChatBoxSpinner();
           setUIState({
@@ -126,6 +126,7 @@ const Dashboard = (props) => {
             ...UIState,
             showRequestModal: true
         });
+        setRequestSeen(true);
     }
 
     const openChatBox = ()=>{
@@ -142,6 +143,10 @@ const Dashboard = (props) => {
             ...UIState,
             showChatBox: false
         });
+    }
+
+    const friendsBoxDisplayHandler = () => {
+        setFriendsBoxDisplay(friendsBoxDisplay=>! friendsBoxDisplay);
     }
 
     const acceptRequestHandler = (event, dataOfRequestSender) =>{
@@ -209,7 +214,14 @@ const Dashboard = (props) => {
             </ul>
         </Modal>
         <div className={classes.Dashboard}>
-            <Header userData={userData} switchPage={switchPage} requestModal={modalOpenHandler} requests={requests} searchPageShow={UIState.searchPageShow} />
+            <Header userData={userData} 
+                    switchPage={switchPage} 
+                    requestModal={modalOpenHandler} 
+                    searchPageShow={UIState.searchPageShow}
+                    requestSeen={requestSeen}
+                    changeFriendsBoxDisplay={friendsBoxDisplayHandler}/>
+
+    
             <SearchPage userData={userData} 
                         show={UIState.searchPageShow}
                         openChatBox={openChatBox}
@@ -225,7 +237,8 @@ const Dashboard = (props) => {
                       selectPerson={changeSelectedFriend} 
                       selectedPerson={selectedFriend}
                       userData={userData} 
-                      chatSpinner={chatBoxSpinner}/>
+                      chatSpinner={chatBoxSpinner}
+                      friendsBoxDisplay={friendsBoxDisplay} />
         </div>
         </Aux>
     );

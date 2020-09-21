@@ -1,7 +1,7 @@
 import React, {useState, useContext, useEffect} from 'react';
 import classes from './MessagesBox.module.css';
 import FirebaseContext from '../../components/Firebase/context';
-import img from '../../assets/pinkRose.jpg';
+import img from '../../assets/user.png';
 import Aux from '../hoc/Auxx';
 
 const MessagesBox = (props) => {
@@ -26,7 +26,6 @@ const MessagesBox = (props) => {
                     const obj = snapshot.val()[key];
                     return obj;
                 });
-                console.log(data);
                
 
                 setChatData({
@@ -37,13 +36,14 @@ const MessagesBox = (props) => {
         });
         return () => listener();
 
-    },[firebase.auth.currentUser]);
+    },[firebase.auth.currentUser.uid]);
 
 
 
     const clickOnMessage = (event, personSharingChatWithName, personSharingChatWithId) => {
+        const imageUrl = personSharingChatWithName.imageUrl? personSharingChatWithName.imageUrl : null;
 
-        props.selectPerson(event, personSharingChatWithName.username, personSharingChatWithId);
+        props.selectPerson(event, personSharingChatWithName.username, personSharingChatWithId, imageUrl);
         props.showChatBox();
     }
 
@@ -59,7 +59,6 @@ const MessagesBox = (props) => {
                             const chatMessagePushKeys = Object.keys(chatData.chats[i]);
                             const seen = chatData.chats[i][chatMessagePushKeys[chatMessagePushKeys.length-1]].seen ;
                             const lastMessage = chatData.chats[i][chatMessagePushKeys[chatMessagePushKeys.length-1]].message;
-                            console.log((new Date(chatData.chats[i][chatMessagePushKeys[chatMessagePushKeys.length-1]].createdAt)));
                         setChatInfo(chatInfo => {
                             const imageUrl = data.imageUrl? data.imageUrl : img;
                             if(chatInfo[i]){

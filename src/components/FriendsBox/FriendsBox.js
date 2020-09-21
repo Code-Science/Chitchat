@@ -1,7 +1,7 @@
 import React, {useState, useContext, useEffect} from 'react';
 import classes from './FriendsBox.module.css';
 import FirebaseContext from '../../components/Firebase/context';
-import img from '../../assets/albi.jpg';
+import img from '../../assets/user.png';
 
 
 const FriendsBox = (props) => {
@@ -75,10 +75,9 @@ const FriendsBox = (props) => {
     if(props.friends){
         data = props.friends.map((friend, i )=> {
             const imageSrc = friendImageUrls? friendImageUrls[i]? friendImageUrls[i] : img : img;
-            console.log(friendImageUrls);
             return <li key={i+friend}><img src={imageSrc} />{friend.name}
                   <aside className={classes.Btns}>
-                    <button onClick={(event)=> props.selectPerson(event, friend.name, friend.id)}><i className="fas fa-envelope-square"></i></button>
+                    <button onClick={(event)=> props.selectPerson(event, friend.name, friend.id, imageSrc)}><i className="fas fa-envelope"></i></button>
                     <button onClick={(event) => removeFriendHandler(event, friend.id)}><i className="fas fa-users-slash"></i></button>
                   </aside>
                 </li>
@@ -86,7 +85,7 @@ const FriendsBox = (props) => {
     }
     
     return (
-        <div className={classes.FriendsBox}>
+        <div className={classes.FriendsBox} style={{visibility:props.show? "visible":"hidden", transform: props.show? 'translateX(0px)':'translateX(1000px)'}}>
              <ul>
                 {data}
              </ul>

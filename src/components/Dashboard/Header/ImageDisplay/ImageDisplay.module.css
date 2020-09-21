@@ -1,18 +1,20 @@
 
 .ImageDisplay{
     position: relative;
+    height: 40px;
 }
 .Wraper{
     border: 2px solid white;
-    width:100px;
-    transform: translateY(20px);
+    width:50px;
+    transform: translateY(-10px);
     border-radius: 5px;
     margin:auto;
 
 }
 
 .Image{
-    width:100px;
+    width:50px;
+    height:40px;
     border-radius: 5px;
     filter: blur(0);
     transition: filter .5s;
@@ -22,7 +24,7 @@
 
 }
 .IconUpload{
-    font-size: 25px;
+    font-size: 20px;
     position:absolute;
     top: 50%;
     left:50%;
@@ -45,4 +47,57 @@
 }
 .Image:hover + .IconUpload{
     opacity:1;
+}
+@media (max-width:900px){
+    .ImageDisplay{
+        height: 25px;
+    }
+    .Wraper{
+        border: 1px solid white;
+        width:35px;
+        transform: translateY(-5px);
+        border-radius: 5px;
+    
+    }
+    
+    .Image{
+        width:35px;
+        height:25px;
+        border-radius: 5px;
+    
+    }
+    .IconUpload{
+        font-size: 16px;
+    }
+       
+}
+@media (max-width:600px){
+    .Wraper{
+        transform: translateY(-7px);
+        border-radius: 3px;
+    
+    }
+    
+       
+}
+@media (max-width:350px){
+    .ImageDisplay{
+        height: 20px;
+    }
+    .Wraper{
+        width:30px;
+        transform: translateY(-4px);
+    
+    }
+    
+    .Image{
+        width:30px;
+        height:20px;
+    
+    }
+    .IconUpload{
+        font-size: 13px;
+    }
+    
+       
 }

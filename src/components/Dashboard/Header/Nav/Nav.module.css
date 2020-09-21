@@ -3,19 +3,20 @@
     display: flex;
     justify-content: space-between;
     position: fixed;
-    top: 7vh;
-    width: 75%;
+    top: 3vh;
+    width: 100%;
     font-size: 20px;
-    border-top-left-radius: 30px;
-    border-top-right-radius: 30px;
     z-index: 100;
 }
 
 .Nav p{
-    color: red;
+    color: white;
     font-weight: 700;
+    font-size: 30px;
     margin: 8px 0;
     margin-left: 60px;
+    font-family: 'Dancing Script', cursive;
+    letter-spacing: 5px;
 }
 
 .Nav ul{
@@ -31,14 +32,179 @@
     text-decoration: none;
     color: white;
 }
+.Nav ul li strong{
+    font-size: 16px;
+    color: white;
+}
+.Nav ul li i{
+    font-size: 20px;
+}
 .Nav button{
     border:none;
     outline: none;
     background-color: transparent;
-    color:rgb(119, 114, 114);
+    color:rgb(238, 235, 235);
     font-weight: 700;
 }
-.Nav button:hover{
-    color:rgb(138, 135, 135);
+.Nav button:hover, .MenuIcon:hover, .FriendsIcon i:hover{
+    color:white;
     cursor: pointer;
 }
+.Nav .RequestAlert, .Dropdown .RequestAlert{
+    color:rgb(248, 163, 163);
+}
+.Nav .RequestAlert:hover{
+    color:rgb(247, 142, 142);
+}
+.FriendsIcon{
+    display: none;
+}
+.MenuIcon, .FriendsIcon i{
+    color: rgb(238, 235, 235);
+    font-size: 14px;
+}
+.Dropdown{
+    width:130px;
+    background-color: rgba(110, 107, 107, 0.911);
+    position: absolute;
+    z-index: 1000;
+    top: 10vh;
+    left: 70vw;
+}
+.Dropdown ul{
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+}
+.Dropdown ul li{
+    padding: 5px 10px;
+}
+.Dropdown ul li:not(:last-child){
+    border-bottom: 1px solid gray;
+}
+.Dropdown ul li button{
+    background-color: transparent;
+    border: none;
+    font-size: 12px;
+    font-weight: 600;
+    color:rgb(238, 235, 235);
+}
+.Dropdown ul li:hover{
+    background-color: rgba(131, 128, 128, 0.911);
+}
+
+
+@media (max-width:1200px){
+    .Nav p{
+        font-size: 27px;
+        letter-spacing: 4px;
+    }
+}
+
+@media (max-width:900px){
+    .Collapse{
+        display: none;
+    }
+    .MenuIcon{
+        display: block;
+    }
+    .FriendsIcon{
+        display: block;
+    }
+    .Nav{
+        top: 2vh;
+        font-size: 16px;
+    }
+    .Nav p{
+        font-size: 20px;
+        margin: 5px 0;
+        margin-left: 40px;
+        letter-spacing: 4px;
+    }
+    .Nav ul li i{
+        font-size: 16px;
+    }
+    .Nav ul li strong{
+        font-size: 13px;
+    }
+    .Nav ul li:not(:last-child){
+        margin-right: 15px;
+    }   
+}
+@media (max-width:800px){
+    .Dropdown{
+        left: 66vw;
+    }
+    
+}
+@media (max-width:700px){
+    .Dropdown{
+        left: 60vw;
+    }
+    
+}
+@media (max-width:600px){
+    .Nav{
+        top: 1vh;
+        font-size: 13px;
+    }
+    .Nav p{
+        font-size: 16px;
+        margin: 3px 0;
+        margin-top: 7px;
+        margin-left: 15px;
+        letter-spacing: 2px;
+    }
+    .Nav ul li i{
+        font-size: 13px;
+    }
+    .Nav ul li strong{
+        font-size: 12px;
+    }
+    .Nav ul li:not(:last-child){
+        margin-right: 10px;
+    }  
+    .Dropdown{
+        top: 7vh;
+        left: 56vw;
+    }
+     
+}
+@media (max-width:500px){
+    .Dropdown{
+        left: 50vw;
+    }
+    
+}
+@media (max-width:420px){
+    .Dropdown{
+        left: 40vw;
+    }
+    
+}
+
+
+
+@media (max-width:350px){
+    .Nav p{
+        font-size: 14px;
+        margin: 3px 0;
+        margin-top: 7px;
+        margin-left: 10px;
+        letter-spacing: .5px;
+    }
+    .Nav ul li i{
+        font-size: 12px;
+    }
+    .Nav ul li strong{
+        font-size: 10px;
+    }
+    .Dropdown{
+        left: 35vw;
+    }
+}
+
+
+
+

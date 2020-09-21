@@ -1,7 +1,7 @@
 import React, {useState, useContext} from 'react';
 import classes from './SearchPage.module.css';
 import FirebaseContext from '../../components/Firebase/context';
-import img from '../../assets/pinkRose.jpg';
+import img from '../../assets/user.png';
 
 
 const SearchPage = props => {
@@ -49,7 +49,6 @@ const SearchPage = props => {
             ele.innerHTML = "Request already sent!";
         });
     }
-    console.log(props.friendsKeys);
     let data = <li className={classes.Initial}>Enter name or email address in the search box to find friends</li>
     if(usersArray && usersArray != "not found" && usersArray.length != 0){
         data = usersArray.map((requestSentToUserData, i )=> {
@@ -57,7 +56,7 @@ const SearchPage = props => {
             return <li key={i+requestSentToUserData.username} id={i+requestSentToUserData.username}><div style={{backgroundImage: "url("+imageUrl+")"}} className={classes.DivImage}></div> {requestSentToUserData.username}
                   
                   <button onClick={(event) => addFriendHandler(event, requestSentToUserData.key, i+requestSentToUserData.username)}>Add Friend</button>
-                  <button onClick={(event)=> props.selectPerson(event, requestSentToUserData.username, requestSentToUserData.key)}>Send Message</button>
+                  <button onClick={(event)=> props.selectPerson(event, requestSentToUserData.username, requestSentToUserData.key, imageUrl)}>Send Message</button>
                 </li>
         });
     }else if(usersArray && (usersArray === "not found" || usersArray.length === 0)){
