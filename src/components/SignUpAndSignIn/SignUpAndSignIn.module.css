@@ -108,3 +108,45 @@
 
     }
 }
+
+@media (max-width:1000px){
+    .Box form{
+        width: 60%;
+    }
+}
+@media (max-width:650px){
+    .Box form{
+        width: 80%;
+    }
+    .Box h1{
+        font-size: 25px;
+        margin-top: 17vh;
+        margin-bottom: 1.5vh;
+    }
+    
+    .Box button{
+        margin-top: 25px;
+        background-color: rgba(214, 214, 218, 0.664);
+        outline: none;
+        border: none;
+        padding: 10px 50px;
+        font-size: 12px;
+    }    
+    
+    
+}
+@media (max-width:500px){
+    .Box form{
+        width: 95%;
+    }
+    .Box label span{
+        width:20%;
+        font-size: 13px;
+    }
+    .Box p{
+        font-size: 12px;
+        margin-bottom: 15px;
+    }
+    
+    
+}

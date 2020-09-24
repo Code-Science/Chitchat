@@ -87,7 +87,7 @@ const MessagesBox = (props) => {
     return (
         <div className={classes.MessagesBox}>
             <ul>
-                {chatInfo}
+                {chatData? chatInfo: <p style={{marginTop:"50px"}}>No chat data</p>}
                 {/* <li onClick={props.showChatBox}><span style={{backgroundImage:'url('+img+')'}}></span><b>message 1</b><p>this message was sent long ago.</p></li>
                 <hr/>
                 <li><a href='#'><span style={{backgroundImage:'url('+img+')'}}></span><b>message 2</b><p>this nvcmc message was sent long ago.</p></a></li>

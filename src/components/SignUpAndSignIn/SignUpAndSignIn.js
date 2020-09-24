@@ -45,12 +45,6 @@ const SignUpAndSignIn = (props) =>{
     }
 
     const [entry, setEntry] = useState('Sign up');
-    const [user, setUser] = useState({
-        username: '',
-        email: '',
-        passwordOne: '',
-        passwordTwo: ''
-      });
 
 
     const changeToLoginHandler = () =>{
@@ -67,42 +61,44 @@ const SignUpAndSignIn = (props) =>{
         const emailInput = document.getElementById('email').value;
         const passwordInput = document.getElementById('password').value;
 
-        // const authData = {
-        //     email: emailInput.value,
-        //     password: passwordInput.value,
-        //     returnSecureToken: true
-        // }
+
         if(entry === 'Login'){
-            firebase.doSignInWithEmailAndPassword(emailInput, passwordInput)
-            .then(() => {
-                setError(false);
-            })
-            .catch(error => {
-                setError(true);
-            });
-        }
+                firebase.doSignInWithEmailAndPassword(emailInput, passwordInput)
+                .then(() => {
+                    setError(false);
+                })
+                .catch(error => {
+                    setError(true);
+                });
+        }   
         else{
-            firebase.doCreateUserWithEmailAndPassword(emailInput, passwordInput)
-            .then((authUser) => {
-                setError(false);
-                firebase.user(authUser.user.uid).set({username:nameInput.value, email: emailInput}, function(error) {
-                    if (error) {
-                      // The write failed...
-                    } else {
-                      // Data saved successfully!
-                    }
+            if(nameInput.value){
+                const nameInputValue = nameInput.value.toLowerCase();
+                firebase.doCreateUserWithEmailAndPassword(emailInput, passwordInput)
+                .then((authUser) => {
+                    setError(false);
+                    firebase.user(authUser.user.uid).set({username:nameInputValue, email: emailInput}, function(error) {
+                        if (error) {
+                        // The write failed...
+                        } else {
+                        // Data saved successfully!
+                        }
+                    });
+                    firebase.info(authUser.user.uid).set({username:nameInputValue, email: emailInput, friends: null, chats: null}, function(error) {
+                        if (error) {
+                        // The write failed...
+                        } else {
+                        // Data saved successfully!
+                        }
+                    });
+                })
+                .catch(error => {
+                    setError(true);
                 });
-                firebase.info(authUser.user.uid).set({username:nameInput.value, email: emailInput, friends: null, chats: null}, function(error) {
-                    if (error) {
-                      // The write failed...
-                    } else {
-                      // Data saved successfully!
-                    }
-                });
-            })
-            .catch(error => {
+            }else{
+                nameInput.className = [classes.Input,classes.Warning].join(' ');
                 setError(true);
-            });
+            }
         }
      
     }
@@ -115,7 +111,7 @@ const SignUpAndSignIn = (props) =>{
                 <h3>{entry}</h3>
                 {error ? <aside> {entry === 'Sign up'?<p>Either email adress you entered is already in use or invalid values are entered. Please try again!</p>:<p>Incorrect email address or password. Please try again!</p>}</aside>: null}
                 {entry === 'Sign up'? <p>Already a member? click <strong onClick={changeToLoginHandler}>Login</strong></p>: <p>Not a member? click <strong onClick={changeToSignUpHandler}>Sign up</strong></p>}
-                {entry === 'Sign up'? <label><span>Name:</span> <input className={styles.join(' ')} onChange={(event) => onChangeHandler(event, 'name')} type='text' id='name' placeholder='Enter your name' /></label>: null}
+                {entry === 'Sign up'? <label><span>Name:</span> <input className={styles.join(' ')} onChange={(event) => onChangeHandler(event, 'name')} type='text' id='name' placeholder='Enter your name' required/></label>: null}
                 <label><span>Email:</span> <input className={styles.join(' ')} onChange={(event) => onChangeHandler(event, 'email')} id='email' type='email' placeholder='Your email address' /></label>
                 <label><span>Password:</span> <input className={styles.join(' ')} onChange={(event) => onChangeHandler(event, 'password')} id='password' type='password' placeholder='password' /></label>
                 <button onClick={submitHandler}>SUBMIT</button>

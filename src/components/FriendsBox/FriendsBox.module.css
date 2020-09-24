@@ -1,19 +1,23 @@
 .FriendsBox{
     position: absolute;
-    width:26%;
-    height: 80%;
+    width:26.4%;
+    height: 85.5%;
     background-color: rgba(90, 83, 83, 0.74);
     overflow: auto;
     border-radius: 3px;
-    border-top-left-radius: 0px;
-    border-bottom-left-radius: 0px;
     right:2%;
-    top: 12.9vh;
+    top: 80px;
+    overflow: auto;
 }
 .FriendsBox ul{
     margin: 0;
-    padding: 0;
+    padding: 10px;
     list-style: none;
+}
+.FriendsBox ul p{
+    color: rgb(185, 184, 184);
+    margin: 10px 30px;
+    font-size: 13px;
 }
 .FriendsBox li aside button{
      border: none;
@@ -72,10 +76,9 @@
     transform: translateY(25%);
     margin-right: 10px;
 }
-
-@media (max-width:1100px){
+@media (max-width:1200px){
     .FriendsBox{
-        width:28%;
+        width:30%;
     }
 }
 
@@ -87,20 +90,50 @@
 
 @media (max-width:900px){
     .FriendsBox{
-        width:270px;
-        height: 81.7%;
+        width:290px;
         background-color: rgba(90, 83, 83, 0.904);
         transition: all 1s;
         position: absolute;
         z-index:900;
         right: 0;
-        top: 10.9vh;
+    }
+    .Btns{
+        margin-right: 5px;
+    }
+    .FriendsBox li{
+        margin-left: 10px;
+        font-size: 15px;
+    }
+}
+@media (max-width:700px){
+    .FriendsBox{
+        top: 66px;
     }
 }
 @media (max-width:600px){
     .FriendsBox{
-        height: 100%;
-        top: 6.9vh;
-
+        height: 84.45%;
+        top: 99px;
+    }
+    .FriendsBox li{
+        font-size: 14px;
+    }
+    .FriendsBox li aside button i{
+        font-size: 17px;
+    }
+    .FriendsBox li aside button:last-child i{
+        font-size: 15px;
     }
 }
+@media (max-width:400px){
+    .FriendsBox{
+        top: 94px;
+    }
+}
+
+@media (max-width:370px){
+    .FriendsBox{
+        top: 91px;
+    } 
+}
+

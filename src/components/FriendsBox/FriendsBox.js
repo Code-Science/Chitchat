@@ -2,10 +2,12 @@ import React, {useState, useContext, useEffect} from 'react';
 import classes from './FriendsBox.module.css';
 import FirebaseContext from '../../components/Firebase/context';
 import img from '../../assets/user.png';
+import Aux from "../hoc/Auxx";
+import Backdrop from "../UI/Backdrop/Backdrop";
 
 
 const FriendsBox = (props) => {
-    let data = <p>You dont have any friends yet, click search to find some</p>;
+    let data = <p>You dont have any friends yet, click on search icon to find people.</p>;
     const firebase = useContext(FirebaseContext);
     const [friendImageUrls, setImageUrls] = useState(null);
 
@@ -57,6 +59,7 @@ const FriendsBox = (props) => {
 
 
 
+
     const removeFriendHandler = (event, friendId) =>{
            event.preventDefault();
            firebase.db.ref(`friends/${firebase.auth.currentUser.uid}/${friendId}`).remove().then(response =>{
@@ -85,11 +88,14 @@ const FriendsBox = (props) => {
     }
     
     return (
-        <div className={classes.FriendsBox} style={{visibility:props.show? "visible":"hidden", transform: props.show? 'translateX(0px)':'translateX(1000px)'}}>
-             <ul>
-                {data}
-             </ul>
-        </div>
+        <Aux>
+            <div className={classes.FriendsBox} style={{visibility:props.show? "visible":"hidden", transform: props.show? 'translateX(0px)':'translateX(1000px)'}}>
+                <ul onClick={window.innerWidth < 900?  props.changeShow : null}>
+                    {data}
+                </ul>
+            </div>
+            {window.innerWidth < 900? <Backdrop show={props.show} clicked={props.changeShow}/>: null}
+        </Aux>
     )
 }
 

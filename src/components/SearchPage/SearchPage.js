@@ -7,7 +7,7 @@ import img from '../../assets/user.png';
 const SearchPage = props => {
     const [usersArray, setUsers] = useState(null)
     const firebase = useContext(FirebaseContext);
-    const searchHandler = (event) =>{
+    const searchHandler = (event) => {
         event.preventDefault();
         let value = document.getElementById('searchBar').value;
         if(value){ 
@@ -20,10 +20,17 @@ const SearchPage = props => {
             if(snapshot && snapshot.val()){
                 const data = [];
                 Object.keys(snapshot.val()).forEach(key => {
-                    if(key != firebase.auth.currentUser.uid && !props.friendsKeys.includes(key)){
-                        const obj = snapshot.val()[key];
-                            obj.key = key;
-                            data.push(obj);
+                    if(key != firebase.auth.currentUser.uid){
+
+                        if(props.friendsKeys && !props.friendsKeys.includes(key)){
+                            const obj = snapshot.val()[key];
+                                obj.key = key;
+                                data.push(obj);
+                        }else if(!props.friendsKeys){
+                            const obj = snapshot.val()[key];
+                                obj.key = key;
+                                data.push(obj);
+                        }
                     }
                 });
                 setUsers(data);

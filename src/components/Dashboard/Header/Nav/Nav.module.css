@@ -3,7 +3,7 @@
     display: flex;
     justify-content: space-between;
     position: fixed;
-    top: 3vh;
+    top: 2vh;
     width: 100%;
     font-size: 20px;
     z-index: 100;
@@ -33,7 +33,7 @@
     color: white;
 }
 .Nav ul li strong{
-    font-size: 16px;
+    font-size: 14px;
     color: white;
 }
 .Nav ul li i{
@@ -56,16 +56,16 @@
 .Nav .RequestAlert:hover{
     color:rgb(247, 142, 142);
 }
-.FriendsIcon{
+.MobileOnly, .MenuIcon, .MobileeOnly {
     display: none;
 }
-.MenuIcon, .FriendsIcon i{
+.MenuIcon, .MobileOnly i{
     color: rgb(238, 235, 235);
     font-size: 14px;
 }
 .Dropdown{
     width:130px;
-    background-color: rgba(110, 107, 107, 0.911);
+    background-color: rgba(66, 64, 64, 0.911);
     position: absolute;
     z-index: 1000;
     top: 10vh;
@@ -81,7 +81,7 @@
     padding: 5px 10px;
 }
 .Dropdown ul li:not(:last-child){
-    border-bottom: 1px solid gray;
+    border-bottom: 1px solid rgb(104, 102, 102);
 }
 .Dropdown ul li button{
     background-color: transparent;
@@ -91,8 +91,17 @@
     color:rgb(238, 235, 235);
 }
 .Dropdown ul li:hover{
-    background-color: rgba(131, 128, 128, 0.911);
+    background-color: rgba(97, 94, 94, 0.911);
 }
+.MobileeOnly strong{
+    color: rgb(241, 240, 240);
+    position: absolute;
+    top: 9vh;
+    left:50%;
+    transform: translateX(-50%);
+    font-size: 13px;
+}
+
 
 
 @media (max-width:1200px){
@@ -106,31 +115,9 @@
     .Collapse{
         display: none;
     }
-    .MenuIcon{
+    .MenuIcon, .MobileOnly{
         display: block;
     }
-    .FriendsIcon{
-        display: block;
-    }
-    .Nav{
-        top: 2vh;
-        font-size: 16px;
-    }
-    .Nav p{
-        font-size: 20px;
-        margin: 5px 0;
-        margin-left: 40px;
-        letter-spacing: 4px;
-    }
-    .Nav ul li i{
-        font-size: 16px;
-    }
-    .Nav ul li strong{
-        font-size: 13px;
-    }
-    .Nav ul li:not(:last-child){
-        margin-right: 15px;
-    }   
 }
 @media (max-width:800px){
     .Dropdown{
@@ -140,53 +127,80 @@
 }
 @media (max-width:700px){
     .Dropdown{
-        left: 60vw;
-    }
-    
-}
-@media (max-width:600px){
-    .Nav{
-        top: 1vh;
-        font-size: 13px;
+        left: 62vw;
     }
     .Nav p{
+        font-size: 25px;
+        /* margin: 5px 0; */
+        margin-left: 40px;
+        letter-spacing: 4px;
+    }
+}
+@media (max-width:600px){
+   
+    
+    .Nav{
+        top: 2vh;
         font-size: 16px;
-        margin: 3px 0;
-        margin-top: 7px;
-        margin-left: 15px;
-        letter-spacing: 2px;
+    }
+    .Nav p{
+        font-size: 23px;
+        margin: 7px 0;
+        margin-left: 20px;
+        letter-spacing: 3px;
     }
     .Nav ul li i{
-        font-size: 13px;
+        font-size: 18px;
     }
     .Nav ul li strong{
-        font-size: 12px;
+        font-size: 14px;
     }
     .Nav ul li:not(:last-child){
-        margin-right: 10px;
-    }  
+        margin-right: 28px;
+    }   
+    
+    .MobileeOnly{
+        display: block;
+    }
+    .DesktopOnly{
+        display: none;
+    }
+    .Nav ul{
+        margin-right: 0px;
+    }
+    
     .Dropdown{
-        top: 7vh;
-        left: 56vw;
+        top: 9vh;
+        left: 71vw;
+    }
+    
+    .MobileeOnly strong{
+        background-color: rgb(57, 57, 109);
+        width:100%;
+        padding: 9px 2px;
     }
      
 }
 @media (max-width:500px){
+   
     .Dropdown{
-        left: 50vw;
+        left: 64vw;
     }
     
 }
 @media (max-width:420px){
     .Dropdown{
-        left: 40vw;
+        left: 59vw;
     }
+    .Nav ul li:not(:last-child){
+        margin-right: 20px;
+    }  
     
 }
 
 
 
-@media (max-width:350px){
+/* @media (max-width:350px){
     .Nav p{
         font-size: 14px;
         margin: 3px 0;
@@ -203,7 +217,7 @@
     .Dropdown{
         left: 35vw;
     }
-}
+} */
 
 
 

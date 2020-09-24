@@ -5,6 +5,7 @@ import FirebaseContext from '../../Firebase/context';
 import Modal from '../../UI/Modal/Modal';
 import Aux from "../../hoc/Auxx";
 import Spinner from "../../UI/Spinner/Spinner";
+import nextId from "react-id-generator";
 
 const MessageBox = (props) =>{
 
@@ -15,8 +16,6 @@ const MessageBox = (props) =>{
     const [prevFileData, setData] = useState(null);
     const [modalContent, setModalContent] = useState(null);
     const [showSpinner, setSpinner] = useState(false);
-
-
 
 
 
@@ -39,7 +38,6 @@ const MessageBox = (props) =>{
             }
         });
 
-        console.log(props.selectedPerson.name);
         return () => listener();
 
     },[props.selectedPerson])
@@ -75,7 +73,7 @@ const MessageBox = (props) =>{
                            Your browser does not support the video tag.
                         </video>);
             case "audio":
-                return (<audio controls>
+                return (<audio controls className={classes.chatAudio} >
                             <source src={url} type="audio/ogg"/>
                             <source src={url} type="audio/mpeg"/>
                             <source src={url} type="audio/mp3"/>
@@ -207,7 +205,7 @@ const MessageBox = (props) =>{
 
     }
 
-    let modalData = (<div><h3>Share Image or video</h3>
+    let modalData = (<div className={classes.ModalContent}><h3>Share Image or video</h3>
                        <form onSubmit={(event)=> fileUploading(event)}>
                               <input type='file' accept="image/*,video/*,.pdf,.doc,audio/*" onChange={(event)=>fileInputChange(event)} id="FileInput"/>
                               <button>Submit</button>
@@ -225,15 +223,15 @@ const MessageBox = (props) =>{
             const time = new Date(message.createdAt);
             if(message.id == firebase.auth.currentUser.uid){
                 if(typeof message.message === "string"){
-                   return  <li key={i+message.name} className={classes.ListMe}><aside className={classes.Me}><span></span>{message.message}</aside><span className={classes.Time2}><em>{`${time.getHours()}.${time.getMinutes()}`}</em><em>{time.toDateString().slice(4,10)}</em></span></li>
+                   return  <li key={nextId()} className={classes.ListMe}><aside className={classes.Me}><span></span>{message.message}</aside><span className={classes.Time2}><em>{`${time.getHours()}.${time.getMinutes()}`}</em><em>{time.toDateString().slice(4,10)}</em></span></li>
                 }else{
-                    return  <li key={i+message.name} className={classes.ListMe}><aside className={classes.Me}><span></span>{generateHtmlTag(message.message.type,message.message.url)}</aside><span className={classes.Time2}><em>{`${time.getHours()}.${time.getMinutes()}`}</em><em>{time.toDateString().slice(4,10)}</em></span></li>
+                    return  <li key={nextId()} className={classes.ListMe}><aside className={classes.Me}><span></span>{generateHtmlTag(message.message.type,message.message.url)}</aside><span className={classes.Time2}><em>{`${time.getHours()}.${time.getMinutes()}`}</em><em>{time.toDateString().slice(4,10)}</em></span></li>
                 }
             }else{
                 if(typeof message.message === "string"){
-                    return  <li key={i+message.name} className={classes.ListFriend}><span className={classes.Time}><em>{`${time.getHours()}.${time.getMinutes()}`}</em><em>{time.toDateString().slice(4,10)}</em></span><aside className={classes.Friend}><span></span>{message.message}</aside></li>
+                    return  <li key={nextId()} className={classes.ListFriend}><span className={classes.Time}><em>{`${time.getHours()}.${time.getMinutes()}`}</em><em>{time.toDateString().slice(4,10)}</em></span><aside className={classes.Friend}><span></span>{message.message}</aside></li>
                 }else{
-                    return  <li key={i+message.name} className={classes.ListFriend}><span className={classes.Time}><em>{`${time.getHours()}.${time.getMinutes()}`}</em><em>{time.toDateString().slice(4,10)}</em></span><aside className={classes.Friend}><span></span>{generateHtmlTag(message.message.type,message.message.url)}</aside></li>
+                    return  <li key={nextId()} className={classes.ListFriend}><span className={classes.Time}><em>{`${time.getHours()}.${time.getMinutes()}`}</em><em>{time.toDateString().slice(4,10)}</em></span><aside className={classes.Friend}><span></span>{generateHtmlTag(message.message.type,message.message.url)}</aside></li>
                 }
             }
         });

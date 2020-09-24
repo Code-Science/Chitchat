@@ -103,7 +103,8 @@
 }
 @media (max-width:600px){
     .SearchPage{
-        margin-left: 6.5%;
+       width:93.5%;
+       margin-left: 0%;
     
     }
     .DivImage{
@@ -129,3 +130,16 @@
     }
     
 }
+@media (max-width:500px){
+    .SearchPage{
+        width:91.6%;
+     
+     }
+}
+@media (max-width:400px){
+    .SearchPage{
+        width:89.7%;
+     
+     }
+}
+

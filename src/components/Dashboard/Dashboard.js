@@ -30,7 +30,13 @@ const Dashboard = (props) => {
     });
 
    
+    useEffect(() => { // Adjusting Display 
+        const w = window.innerWidth;
+        if(w<900){
+            setFriendsBoxDisplay(false);
+        }
 
+    },[]);
     useEffect(() => {    // Get all data related to user from database
         const uid = firebase.auth.currentUser.uid;
         const listener = firebase.db.ref(`users/${uid}`).on('value',function(snapshot){
@@ -238,7 +244,9 @@ const Dashboard = (props) => {
                       selectedPerson={selectedFriend}
                       userData={userData} 
                       chatSpinner={chatBoxSpinner}
-                      friendsBoxDisplay={friendsBoxDisplay} />
+                      friendsBoxDisplay={friendsBoxDisplay}
+                      changeFriendsBoxDisplay={friendsBoxDisplayHandler}/>
+
         </div>
         </Aux>
     );

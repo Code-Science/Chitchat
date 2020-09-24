@@ -55,6 +55,9 @@
         padding: 2rem 3rem;
 
     }
+    /* .Modal h3{
+        font-size: 10px;
+    } */
 }
 @media (max-width:477px){
     .Modal{

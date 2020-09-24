@@ -102,12 +102,14 @@ const ImageDisplay = props => {
                 </div>
             </div>
             <Modal show={modalOpen} click={closeModal}>
-                <h3>Upload Picture</h3>
-                <form onSubmit={(event)=> fileUploading(event)}>
-                   <input type='file' accept="image/*" onChange={(event)=>fileInputChange(event)} id="imageFileInput"/>
-                   <button>Submit</button>
-                </form>
-                {modalContent}
+                <div className={classes.ModalContent}>
+                    <h3>Upload Picture</h3>
+                    <form onSubmit={(event)=> fileUploading(event)}>
+                    <input type='file' accept="image/*" onChange={(event)=>fileInputChange(event)} id="imageFileInput"/>
+                    <button className={classes.SubmitButton}>Submit</button>
+                    </form>
+                    {modalContent}
+                </div>
             </Modal>
         </Aux>
     );

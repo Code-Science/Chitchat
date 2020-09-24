@@ -2,10 +2,8 @@
     width: 100%;
     position: relative;
     margin: 0 auto;
-    margin-top: -4vh;
     z-index: 10;
     background-color: rgba(204, 204, 204, 0.178);
-    /* border-radius: 30px; */
     height: 100vh;
 }
 .listItemRequests{
@@ -51,7 +49,6 @@
         width:35px;
         height: 35px;
         margin-right: 10px;
-        transform: translateY(8%);
     
     }
     .listItemRequests button{

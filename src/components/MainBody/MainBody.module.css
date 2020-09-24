@@ -1,6 +1,6 @@
 .MainBody{
     width:94%;
-    height:85%;
+    height:calc(100vh - 80px);
     margin: auto;
     display: flex;
     border-radius: 3px;
@@ -10,7 +10,7 @@
 
 @media (max-width:600px){
     .MainBody{
-        width:100%;
+        width:95%;
         height:calc(100% - 9vh);
     }
     

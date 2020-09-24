@@ -14,7 +14,7 @@ const MainBody = (props) => {
             <MessagesBox showChatBox={props.openChatBox} selectPerson={props.selectPerson} />:
             props.chatSpinner? <Spinner/>: <ChatBox close={props.closeChatBox} selectedPerson={props.selectedPerson} userData={props.userData} /> }
 
-            <FriendsBox friends={props.friends} showChatBox={props.openChatBox} selectPerson={props.selectPerson} show={props.friendsBoxDisplay}/>
+            <FriendsBox friends={props.friends} showChatBox={props.openChatBox} selectPerson={props.selectPerson} show={props.friendsBoxDisplay} changeShow={props.changeFriendsBoxDisplay}/>
             
         </div>
     );
